@@ -1,8 +1,9 @@
 import 'dart:io';
+
 import 'package:flutter/foundation.dart';
+import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
 import 'package:http/http.dart' as http;
 import 'package:jose/jose.dart';
-import 'package:flutter_web_auth_2/flutter_web_auth_2.dart';
 
 import '/src/exceptions/logto_auth_exceptions.dart';
 import '/src/interfaces/logto_interfaces.dart';
@@ -16,8 +17,8 @@ import 'logto_core.dart' as logto_core;
 
 export '/src/exceptions/logto_auth_exceptions.dart';
 export '/src/interfaces/logto_interfaces.dart';
-export '/src/utilities/constants.dart';
 export '/src/modules/logto_storage_strategy.dart';
+export '/src/utilities/constants.dart';
 
 /**
  * LogtoClient
@@ -243,7 +244,7 @@ class LogtoClient {
         callbackUrlScheme: redirectUriScheme,
         options: const FlutterWebAuth2Options(
           /// Prefer ephemeral web views for the sign-in flow. Only has an effect on Android.
-          intentFlags: ephemeralIntentFlags,
+          intentFlags: defaultIntentFlags,
 
           /// Prefer ephemeral web views for the sign-in flow. Only has an effect on iOS.
           preferEphemeral: true,
